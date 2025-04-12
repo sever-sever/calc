@@ -6,52 +6,47 @@
 #define MUL '*'
 #define DIV '/'
 
+
 int main()
 {
-    int x;
-    int y;
+    int first_operand;
+    int seconf_operand;
     char operation;
-    int result_add = 0;
-    int result_sub = 0;
-    int result_mul = 0;
-    int result_div = 0;
+    int result = 0;
 
-    puts("Enter first number: ");
-    scanf("%d", &x);
+    printf("Enter first number: ");
+    scanf("%d", &first_operand);
 
-    puts("Enter operation [+|-|*|/]: ");
+    printf("Enter operation [ + | - | * | / ]: ");
     scanf(" %c", &operation);
     
-    puts("Enter second number");
-    scanf("%d", &y);
-
+    printf("Enter second number: ");
+    scanf("%d", &seconf_operand);
 
     switch (operation)
     {
         case ADD:
-            result_add = add(x, y);
-            printf("%d %c %d = %d\n", x, operation, y, result_add);
+            result = add(first_operand, seconf_operand);
             break;
 
         case SUB:
-            result_sub = substract(x, y);
-            printf("%d %c %d = %d\n", x, operation, y, result_sub);
+            result = substract(first_operand, seconf_operand);
             break;
         
         case MUL:
-            result_mul = multiply(x, y);
-            printf("%d %c %d = %d\n", x, operation, y, result_mul);
+            result = multiply(first_operand, seconf_operand);
             break;
 
         case DIV:
-            result_div = divide(x, y);
-            printf("%d %c %d = %d\n", x, operation, y, result_div);
+            result = divide(first_operand, seconf_operand);
             break;
         
         default:
-        break;
+            puts("Invalid operation!");
+            return 1;
     }
 
+    print_result(first_operand, seconf_operand, operation, result);
     return 0;
 
 }

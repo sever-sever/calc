@@ -25,7 +25,7 @@ int divide(int x, int y)
     if (y == 0)
     {
         printf("Error: Zero division!\n");
-        return 0;
+        return -1;
     }
     return x / y;
 }

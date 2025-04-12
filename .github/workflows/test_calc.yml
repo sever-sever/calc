@@ -23,3 +23,6 @@ jobs:
       - name: Run the program with sample input
         run: |
           echo -e "10\n+\n5\n" | ./calc
+          echo -e "10\n-\n5\n" | ./calc
+          echo -e "10\n*\n5\n" | ./calc
+          echo -e "10\n/\n5\n" | ./calc
